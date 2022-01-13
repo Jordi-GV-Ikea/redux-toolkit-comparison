@@ -108,15 +108,13 @@ export const {
 
 export const { select: selectTodoActionCreator } = selectedTodoSlice.actions;
 
-const reducer = {
-  todos: todosSlice.reducer,
-  selectedTodo: selectedTodoSlice.reducer,
-  counter: counterSlice.reducer,
-};
-
 
 export default configureStore({
-  reducer,
+  reducer:{
+    todos: todosSlice.reducer,
+    selectedTodo: selectedTodoSlice.reducer,
+    counter: counterSlice.reducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',
 })
