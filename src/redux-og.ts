@@ -6,14 +6,16 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { Todo } from "./type";
 
-// constants
+// constants ***********
 const CREATE_TODO = "CREATE_TODO";
 const EDIT_TODO = "EDIT_TODO";
 const TOGGLE_TODO = "TOGGLE_TODO";
 const DELETE_TODO = "DELETE_TODO";
 const SELECT_TODO = "SELECT_TODO";
 
-// Action & action types
+
+
+// Action & action types *************
 interface CreateTodoActionType {
   type: typeof CREATE_TODO;
   payload: Todo;
@@ -105,7 +107,9 @@ export const selectTodoActionCreator = ({
     payload: { id },
   };
 };
-// Reducers
+
+
+// Reducers **********************
 const todosInitialState: Todo[] = [
   {
     id: uuid(),
@@ -128,6 +132,8 @@ type TodoActionTypes =
   | CreateTodoActionType
   | DeleteTodoActionType
   | ToggleTodoActionType;
+
+  
 const todosReducer = (
   state: Todo[] = todosInitialState,
   action: TodoActionTypes
